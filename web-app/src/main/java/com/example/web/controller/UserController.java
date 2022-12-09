@@ -12,4 +12,5 @@ public class UserController {
         model.addAttribute("screenName", "ユーザー情報: 一覧画面");
         return "user/list";
     }
+
 }
