@@ -17,20 +17,71 @@ Thymeleafを使って、modelの情報をHTMLに表示する
 Bootstrapを使って、わかり易く表現する  
 GitHubにソースコードをpushする  
 
-- UserController.java
+- controller/UserController.java
 
 ```java
-public String displayDetails(Model model) {
-    var list = new ArrayList<ArrayList<String>>();
-    model.addAtribute("userData", list.get(${id}))
-    return "user/details";
+public class UserController {
+
+    @Autowired
+    private UserService userService;
+
+    @GetMapping("/user/list")
+    public String displayList(Model model) {
+        var userlist = userService.searchAll();
+        model.addAtribute("userlist", userlist);
+        return "user/list";
+    }
+
+    @GetMapping("/user/{id}")
+    public String displayDetails(Model model) {
+        var user = userService.findById(id);
+        model.addAtribute("userData", user)
+        return "user/details";
+    }
+
+}
+```
+
+- entity/User.java
+
+```java
+@Data
+public class User {
+    private Long id;
+    private String name;
+    private String phone;
+    private Date updateDate;
+    private Date createDate;
+    private Date deleteDate;
+}
+```
+
+- service/UserService.java
+
+```java
+@Service
+public class UserService {
+
+    @Autowired
+    private User user;
+    private List<User> userlist;
+
+    public ArrayList<User> searchAll() {
+        // var userlist = new ArrayList();
+        return userlist;
+    }
+
+    public User findById(Long id) {
+        return userlist.get(id);
+    }
+
 }
 ```
 
 - user/list.html
 
 ```html
-<tr th:each="user: ${list}"></tr>
+<tr th:each="user: ${userlist}"></tr>
 ```
 
 - user/details.html
