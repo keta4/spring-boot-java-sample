@@ -18,10 +18,25 @@ Bootstrapを使って、わかり易く表現する
 GitHubにソースコードをpushする  
 
 - UserController.java
-  - public String displayDetails(Model model) {}
-  - var list = new ArrayList();
-  - return "user/details";
-- details.html
-  - user/details.html
+
+```java
+public String displayDetails(Model model) {
+    var list = new ArrayList<ArrayList<String>>();
+    model.addAtribute("userData", list.get(${id}))
+    return "user/details";
+}
+```
+
+- user/list.html
+
+```html
+<tr th:each="user: ${list}"></tr>
+```
+
+- user/details.html
+
+```html
+<div th:object="${userData}"></div>
+```
 
 <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e8%a9%b3%e7%b4%b0%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
