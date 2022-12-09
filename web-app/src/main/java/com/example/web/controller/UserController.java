@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class UserController {
 
-    @GetMapping(value = "/user/list")
+    @GetMapping("/user/list")
     public String displayList(Model model) {
         model.addAttribute("screenName", "ユーザー情報: 一覧画面");
         return "user/list";
