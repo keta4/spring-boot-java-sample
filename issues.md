@@ -30,13 +30,21 @@ public String displayDetails(Model model) {
 - user/list.html
 
 ```html
+<<<<<<< HEAD
 <tr th:each="user: ${list}"></tr>
+=======
+<div th:each="user: ${list}"></div>
+>>>>>>> c46d1d83acb9d2bce92e39b2476c9862f542687d
 ```
 
 - user/details.html
 
 ```html
+<<<<<<< HEAD
 <div th:object="${userData}"></div>
+=======
+<div th:object="user: ${userData}"></div>
+>>>>>>> c46d1d83acb9d2bce92e39b2476c9862f542687d
 ```
 
 <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e8%a9%b3%e7%b4%b0%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
