@@ -9,7 +9,7 @@ public class WebController {
 
     @GetMapping("/")
     public String index(Model model) {
-        model.addAttribute("message", "Hello, World!");
+        model.addAttribute("message", "web-app");
         return "index";
     }
 

@@ -32,13 +32,16 @@
   </style>
 
   <body>
-    <div class="container">
-      <div>
-        <p th:text="${message}"></p>
-      </div>
-      <a th:href="@{/user/list}" class="btn btn-primary">user list</a>
-      <!-- /.btn btn-primary -->
-    </div>
-    <!-- /.container -->
+    <main>
+      <section>
+        <div class="container">
+          <header>
+            <h1 th:text="${message}"></h1>
+          </header>
+          <a th:href="@{/user/list}" class="btn btn-primary">user list</a>
+        </div>
+        <!-- /.container -->
+      </section>
+    </main>
   </body>
 </html>
