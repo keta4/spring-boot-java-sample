@@ -1,3 +1,4 @@
 {
+    "boot-java.rewrite.reconcile": true,
     "java.compile.nullAnalysis.mode": "automatic"
 }
