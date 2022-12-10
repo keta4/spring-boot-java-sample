@@ -17,6 +17,8 @@ Thymeleafを使って、modelの情報をHTMLに表示する
 Bootstrapを使って、わかり易く表現する  
 GitHubにソースコードをpushする  
 
+- ディレクトリ構成
+
 ```plaintext
 springSample
   |
