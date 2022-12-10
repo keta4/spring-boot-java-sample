@@ -86,30 +86,12 @@ public class UserController {
 }
 ```
 
-- entity/User.java
-
-```java
-@Data
-public class User {
-    private Long id;
-    private String name;
-    private String phone;
-    private Date updateDate;
-    private Date createDate;
-    private Date deleteDate;
-}
-```
-
 - service/UserService.java
 
 ```java
 @Service
 public class UserService {
-
-    // @Autowired
     
-    private List<User> userlist;
-
     public ArrayList<User> searchAll() {
         // var userlist = new ArrayList();
         return userlist;
