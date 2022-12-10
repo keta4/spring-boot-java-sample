@@ -20,7 +20,7 @@ GitHubにソースコードをpushする
 - ディレクトリ構成
 
 ```plaintext
-traininb.web-app
+training.web-app
   |
   |___src.main
        |
