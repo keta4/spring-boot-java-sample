@@ -86,24 +86,6 @@ public class UserController {
 }
 ```
 
-- service/UserService.java
-
-```java
-@Service
-public class UserService {
-    
-    public ArrayList<User> searchAll() {
-        // var userlist = new ArrayList();
-        return userlist;
-    }
-
-    public User findById(Long id) {
-        return userlist.get(id);
-    }
-
-}
-```
-
 - user/list.html
 
 ```html
