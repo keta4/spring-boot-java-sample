@@ -16,8 +16,7 @@ public class UserService {
         var phone = "090-1234-1234";
         var address = "東京都渋谷区1-1";
         var updateDate = LocalDateTime.of(2022, 12, 2, 0, 0, 0);
-        var createDate = LocalDateTime.of(2022, 12, 1, 0,
-                0, 0);
+        var createDate = LocalDateTime.of(2022, 12, 1, 0, 0, 0);
 
         var Alice = new User(1L, "Alice", address, phone, updateDate, createDate);
         var Bob = new User(2L, "Bob", address, phone, updateDate, createDate);
@@ -44,4 +43,5 @@ public class UserService {
 
     // return foundUser;
     // }
+
 }
