@@ -20,7 +20,7 @@ GitHubにソースコードをpushする
 - ディレクトリ構成
 
 ```plaintext
-springSample
+traininb.web-app
   |
   |___src.main
        |
