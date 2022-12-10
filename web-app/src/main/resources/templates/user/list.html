@@ -37,7 +37,7 @@
       <section>
         <div class="container">
           <header>
-            <h1 th:text="ユーザー情報: 一覧画面"></h1>
+            <h1>ユーザー情報: 一覧画面</h1>
           </header>
 
           <table class="table table-striped">
@@ -48,36 +48,31 @@
                 <th>住所</th>
                 <th>電話番号</th>
                 <th>更新日時</th>
+                <th>登録日時</th>
                 <th></th>
               </tr>
             </thead>
 
             <tbody>
-              <tr>
-                <td>123</td>
-                <td>新村</td>
-                <td>東京都</td>
-                <td>090-1234-1234</td>
-                <td>2022/12/31 00:00:00</td>
-                <td></td>
-              </tr>
-
-              <tr>
-                <td>123</td>
-                <td>新村</td>
-                <td>東京都</td>
-                <td>090-1234-1234</td>
-                <td>2022/12/31 00:00:00</td>
-                <td></td>
-              </tr>
-
-              <tr>
-                <td>123</td>
-                <td>新村</td>
-                <td>東京都</td>
-                <td>090-1234-1234</td>
-                <td>2022/12/31 00:00:00</td>
-                <td></td>
+              <tr
+                th:each="user : ${userlist}"
+                th:object="${user}"
+                class="align-middle"
+              >
+                <td th:text="*{id}"></td>
+                <td th:text="*{name}"></td>
+                <td th:text="*{address}"></td>
+                <td th:text="*{phone}"></td>
+                <td th:text="*{#temporals.formatISO(updateDate)}"></td>
+                <td th:text="*{#temporals.formatISO(createDate)}"></td>
+                <td>
+                  <a
+                    href=""
+                    th:href="@{/user/{id}(id=*{id})}"
+                    class="btn btn-secondary"
+                    >詳細</a
+                  >
+                </td>
               </tr>
             </tbody>
           </table>
