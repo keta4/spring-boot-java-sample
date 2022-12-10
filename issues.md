@@ -61,16 +61,8 @@ training.web-app
             |___application.properties
 ```
 
-- user/list.html
-
-```html
-<tr th:each="user: ${userlist}"></tr>
-```
-
-- user/details.html
-
-```html
-<div th:object="${userData}"></div>
-```
-
 <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e8%a9%b3%e7%b4%b0%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
+
+thymeleaf-extras-java8time
+<https://www.early2home.com/blog/programming/java/post-3162.html>
+<https://blog.beaglesoft.net/entry/2016/11/16/163000>
