@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.example.web.service.UserService;
 
@@ -21,11 +22,11 @@ public class UserController {
         return "user/list";
     }
 
-    // @GetMapping("/user/{id}")
-    // public String displayDetails(@PathVariable Long id, Model model) {
-    // var foundUser = userService.findById(id);
-    // model.addAttribute("userData", foundUser);
-    // return "/user/details";
-    // }
+    @GetMapping("/user/{id}")
+    public String displayDetails(@PathVariable Long id, Model model) {
+        var user = userService.findById(id);
+        model.addAttribute("userData", user);
+        return "/user/details";
+    }
 
 }

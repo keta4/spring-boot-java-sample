@@ -33,15 +33,15 @@ public class UserService {
         return supplyUserList();
     }
 
-    // public User findById(Long id) {
-    // var userlist = supplyUserList();
+    public User findById(Long id) {
+        var userlist = supplyUserList();
 
-    // var foundUser = userlist.stream()
-    // .filter(user -> user.getId() == id)
-    // .findFirst()
-    // .get();
+        var foundUser = userlist.stream()
+                .filter(user -> user.getId() == id)
+                .findFirst()
+                .get();
 
-    // return foundUser;
-    // }
+        return foundUser;
+    }
 
 }
