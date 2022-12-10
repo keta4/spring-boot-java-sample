@@ -61,31 +61,6 @@ training.web-app
             |___application.properties
 ```
 
-- controller/UserController.java
-
-```java
-public class UserController {
-
-    @Autowired
-    private UserService userService;
-
-    @GetMapping("/user/list")
-    public String displayList(Model model) {
-        var userlist = userService.searchAll();
-        model.addAtribute("userlist", userlist);
-        return "user/list";
-    }
-
-    @GetMapping("/user/{id}")
-    public String displayDetails(Model model) {
-        var user = userService.findById(id);
-        model.addAtribute("userData", user)
-        return "user/details";
-    }
-
-}
-```
-
 - user/list.html
 
 ```html
