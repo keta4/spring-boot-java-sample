@@ -17,6 +17,48 @@ Thymeleafを使って、modelの情報をHTMLに表示する
 Bootstrapを使って、わかり易く表現する  
 GitHubにソースコードをpushする  
 
+```plaintext
+springSample
+  |
+  |___src.main
+       |
+       |___java.com.example.web
+       |    |
+       |    |___controller
+       |    |    |
+       |    |    |__UserController.java
+       |    |
+       |    |___entity
+       |    |    |
+       |    |    |___User.java
+       |    |
+       |    |___repository
+       |    |    |
+       |    |    |___UserRepository.java
+       |    |
+       |    |___service
+       |         |
+       |         |___UserService.java
+       |
+       |___resources
+            |
+            |___templates
+            |    |
+            |    |___common
+            |    |    |
+            |    |    |___head.html
+            |    |
+            |    |___user
+            |         |
+            |         |___add.html
+            |         |
+            |         |___list.html
+            |         |
+            |         |___view.html
+            |
+            |___application.properties
+```
+
 - controller/UserController.java
 
 ```java
@@ -62,8 +104,8 @@ public class User {
 @Service
 public class UserService {
 
-    @Autowired
-    private User user;
+    // @Autowired
+    
     private List<User> userlist;
 
     public ArrayList<User> searchAll() {
