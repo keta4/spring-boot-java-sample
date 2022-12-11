@@ -17,11 +17,17 @@
 │              │      User.java
 │              │
 <<<<<<< HEAD
+<<<<<<< HEAD
 │              ├─repository
 │              │      UserRepository.java
 │              │
 =======
 >>>>>>> 271803c (organize my thoughts)
+=======
+│              ├─repository
+│              │      UserRepository.java
+│              │
+>>>>>>> b795492 (organize my thoughts)
 │              └─service
 │                      UserService.java
 │
