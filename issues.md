@@ -21,6 +21,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 │              ├─repository
 │              │      UserRepository.java
 │              │
@@ -40,6 +41,11 @@
 >>>>>>> e22ed96 (organize my thoughts)
 =======
 >>>>>>> 271803c (organize my thoughts)
+=======
+│              ├─repository
+│              │      UserRepository.java
+│              │
+>>>>>>> b795492 (organize my thoughts)
 │              └─service
 │                      UserService.java
 │
