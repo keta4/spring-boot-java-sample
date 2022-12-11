@@ -18,6 +18,7 @@
 │              │
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 │              ├─repository
 │              │      UserRepository.java
 │              │
@@ -28,6 +29,8 @@
 │              │      UserRepository.java
 │              │
 >>>>>>> b795492 (organize my thoughts)
+=======
+>>>>>>> 5e5556d (organize my thoughts)
 │              └─service
 │                      UserService.java
 │
@@ -71,6 +74,7 @@ Thymeleafを使って、modelの情報をHTMLに表示する
 Bootstrapを使って、わかり易く表現する  
 GitHubにソースコードをpushする  
 
+<<<<<<< HEAD
 ユーザー情報一覧
 
 - <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e4%b8%80%e8%a6%a7%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
@@ -78,6 +82,8 @@ GitHubにソースコードをpushする
 <<<<<<< HEAD
 - <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e8%a9%b3%e7%b4%b0%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
 =======
+=======
+>>>>>>> 5e5556d (organize my thoughts)
 ユーザー情報一覧
 
 - <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e4%b8%80%e8%a6%a7%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
