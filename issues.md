@@ -16,9 +16,12 @@
 │              ├─entity
 │              │      User.java
 │              │
+<<<<<<< HEAD
 │              ├─repository
 │              │      UserRepository.java
 │              │
+=======
+>>>>>>> 271803c (organize my thoughts)
 │              └─service
 │                      UserService.java
 │
