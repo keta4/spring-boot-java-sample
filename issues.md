@@ -16,6 +16,9 @@
 │              ├─entity
 │              │      User.java
 │              │
+│              ├─repository
+│              │      UserRepository.java
+│              │
 │              └─service
 │                      UserService.java
 │
