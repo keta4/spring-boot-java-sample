@@ -20,6 +20,7 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 │              ├─repository
 │              │      UserRepository.java
 │              │
@@ -37,6 +38,8 @@
 │              │      UserRepository.java
 │              │
 >>>>>>> e22ed96 (organize my thoughts)
+=======
+>>>>>>> 271803c (organize my thoughts)
 │              └─service
 │                      UserService.java
 │
@@ -81,6 +84,7 @@ Bootstrapを使って、わかり易く表現する
 GitHubにソースコードをpushする  
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 ユーザー情報一覧
 
 - <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e4%b8%80%e8%a6%a7%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
@@ -91,6 +95,8 @@ GitHubにソースコードをpushする
 =======
 =======
 >>>>>>> 5e5556d (organize my thoughts)
+=======
+>>>>>>> 271803c (organize my thoughts)
 ユーザー情報一覧
 
 - <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e4%b8%80%e8%a6%a7%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
