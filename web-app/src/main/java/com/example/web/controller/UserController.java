@@ -17,7 +17,6 @@ public class UserController {
     @GetMapping("/user/list")
     public String displayList(Model model) {
         var userlist = userService.searchAll();
-        System.out.println(userlist);
         model.addAttribute("userlist", userlist);
         return "user/list";
     }
