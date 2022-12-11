@@ -37,7 +37,7 @@ public class UserService {
         var userlist = supplyUserList();
 
         var foundUser = userlist.stream()
-                .filter(user -> user.getId() == id)
+                .filter(user -> user.getId().equals(id))
                 .findFirst()
                 .get();
 
