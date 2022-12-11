@@ -1,5 +1,47 @@
 # issues
 
+## ディレクトリ構成
+
+```plaintext
+├─java
+│  └─com
+│      └─example
+│          └─web
+│              │  WebAppApplication.java
+│              │
+│              ├─controller
+│              │      UserController.java
+│              │      WebController.java
+│              │
+│              ├─entity
+│              │      User.java
+│              │
+│              └─service
+│                      UserService.java
+│
+└─resources
+    │  application.properties
+    │
+    ├─sql
+    │      01_create_database.sql
+    │      02_create_tables.sql
+    │      03_insert_data.sql
+    │
+    ├─static
+    │  └─css
+    │          style.css
+    │
+    └─templates
+        │  index.html
+        │
+        ├─common
+        │      common.html
+        │
+        └─user
+                details.html
+                list.html
+```
+
 ## 2022-12-09
 
 ### 詳細画面をつくってみる
@@ -16,50 +58,6 @@
 Thymeleafを使って、modelの情報をHTMLに表示する  
 Bootstrapを使って、わかり易く表現する  
 GitHubにソースコードをpushする  
-
-- ディレクトリ構成
-
-```plaintext
-training.web-app
-  |
-  |___src.main
-       |
-       |___java.com.example.web
-       |    |
-       |    |___controller
-       |    |    |
-       |    |    |__UserController.java
-       |    |
-       |    |___entity
-       |    |    |
-       |    |    |___User.java
-       |    |
-       |    |___repository
-       |    |    |
-       |    |    |___UserRepository.java
-       |    |
-       |    |___service
-       |         |
-       |         |___UserService.java
-       |
-       |___resources
-            |
-            |___templates
-            |    |
-            |    |___common
-            |    |    |
-            |    |    |___head.html
-            |    |
-            |    |___user
-            |         |
-            |         |___add.html
-            |         |
-            |         |___list.html
-            |         |
-            |         |___view.html
-            |
-            |___application.properties
-```
 
 ユーザー情報一覧
 
