@@ -61,13 +61,13 @@ training.web-app
             |___application.properties
 ```
 
-ユーザー情報一覧
+- ユーザー情報一覧
 <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e4%b8%80%e8%a6%a7%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/#viewhtml>
 
-ユーザー情報詳細
+- ユーザー情報詳細
 <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e8%a9%b3%e7%b4%b0%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
 
-thymeleaf-extras-java8time
+- thymeleaf-extras-java8time
 <https://www.early2home.com/blog/programming/java/post-3162.html>  
 <https://blog.beaglesoft.net/entry/2016/11/16/163000>  
 <https://ryoichi0102.hatenablog.com/entry/2017/08/21/191055>
