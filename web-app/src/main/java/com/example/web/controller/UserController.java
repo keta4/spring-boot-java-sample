@@ -18,14 +18,14 @@ public class UserController {
         private UserService userService;
 
         @GetMapping("/user/list")
-        public String showList(Model model) {
+        public String getUserList(Model model) {
                 List<User> userlist = userService.searchAll();
                 model.addAttribute("userlist", userlist);
                 return "user/list";
         }
 
         @GetMapping("/user/{id}")
-        public String showDetails(@PathVariable Long id, Model model) {
+        public String getUser(@PathVariable Long id, Model model) {
                 User user = userService.findById(id);
                 model.addAttribute("userData", user);
                 return "/user/details";
