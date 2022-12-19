@@ -62,7 +62,7 @@ public class UserService {
 
     /**
      * ユーザー情報編集
-     * 
+     *
      * @param userUpdateRequest
      */
     public void update(UserUpdateRequest userUpdateRequest) {
@@ -75,4 +75,12 @@ public class UserService {
         userRepository.save(user);
     }
 
+    /**
+     * ユーザー削除
+     * 
+     * @param id
+     */
+    public void delete(Long id) {
+        userRepository.deleteById(id);
+    }
 }

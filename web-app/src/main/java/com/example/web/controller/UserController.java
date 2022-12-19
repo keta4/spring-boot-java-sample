@@ -149,4 +149,17 @@ public class UserController {
         return String.format("redirect:/users/%d", userUpdateRequest.getId());
 
     }
+
+    /**
+     * ユーザー削除
+     *
+     * @param id
+     * @param model
+     * @return ユーザー一覧画面
+     */
+    @GetMapping(path = "/users/{id}/delete")
+    public String deleteUser(@PathVariable Long id, Model model) {
+        userService.delete(id);
+        return "redirect:/users";
+    }
 }
