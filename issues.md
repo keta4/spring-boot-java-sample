@@ -1,59 +1,5 @@
 # issues
 
-## ディレクトリ構成
-
-```plaintext
-├─java
-│  └─com
-│      └─example
-│          └─web
-│              │  WebAppApplication.java
-│              │
-│              ├─controller
-│              │      UserController.java
-│              │      WebController.java
-│              │
-│              ├─entity
-│              │      User.java
-│              │
-<<<<<<< HEAD
-<<<<<<< HEAD
-│              ├─repository
-│              │      UserRepository.java
-│              │
-=======
->>>>>>> 271803c (organize my thoughts)
-=======
-│              ├─repository
-│              │      UserRepository.java
-│              │
->>>>>>> b795492 (organize my thoughts)
-│              └─service
-│                      UserService.java
-│
-└─resources
-    │  application.properties
-    │
-    ├─sql
-    │      01_create_database.sql
-    │      02_create_tables.sql
-    │      03_insert_data.sql
-    │
-    ├─static
-    │  └─css
-    │          style.css
-    │
-    └─templates
-        │  index.html
-        │
-        ├─common
-        │      common.html
-        │
-        └─user
-                details.html
-                list.html
-```
-
 ## 2022-12-09
 
 ### 詳細画面をつくってみる
@@ -71,8 +17,53 @@ Thymeleafを使って、modelの情報をHTMLに表示する
 Bootstrapを使って、わかり易く表現する  
 GitHubにソースコードをpushする  
 
-ユーザー情報一覧
+- ディレクトリ構成
 
-- <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e4%b8%80%e8%a6%a7%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
+```plaintext
+training.web-app
+  |
+  |___src.main
+       |
+       |___java.com.example.web
+       |    |
+       |    |___controller
+       |    |    |
+       |    |    |__UserController.java
+       |    |
+       |    |___entity
+       |    |    |
+       |    |    |___User.java
+       |    |
+       |    |___repository
+       |    |    |
+       |    |    |___UserRepository.java
+       |    |
+       |    |___service
+       |         |
+       |         |___UserService.java
+       |
+       |___resources
+            |
+            |___templates
+            |    |
+            |    |___common
+            |    |    |
+            |    |    |___head.html
+            |    |
+            |    |___user
+            |         |
+            |         |___add.html
+            |         |
+            |         |___list.html
+            |         |
+            |         |___view.html
+            |
+            |___application.properties
+```
 
-- <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e8%a9%b3%e7%b4%b0%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
+<https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e8%a9%b3%e7%b4%b0%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
+
+thymeleaf-extras-java8time
+<https://www.early2home.com/blog/programming/java/post-3162.html>
+<https://blog.beaglesoft.net/entry/2016/11/16/163000>
+<https://ryoichi0102.hatenablog.com/entry/2017/08/21/191055>
