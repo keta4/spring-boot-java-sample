@@ -1,5 +1,7 @@
 package com.example.web.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +19,7 @@ public class UserController {
 
         @GetMapping("/user/list")
         public String displayList(Model model) {
-                var userlist = userService.searchAll();
+                List<User> userlist = userService.searchAll();
                 model.addAttribute("userlist", userlist);
                 return "user/list";
         }
