@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.web.dto.UserRequest;
+import com.example.web.dto.UserUpdateRequest;
 import com.example.web.entity.User;
 import com.example.web.repository.UserRepository;
 
@@ -45,7 +46,7 @@ public class UserService {
 
     /**
      * ユーザー新規登録
-     * 
+     *
      * @param userRequest
      */
     public void create(UserRequest userRequest) {
@@ -58,4 +59,20 @@ public class UserService {
         user.setUpdateDate(now);
         userRepository.save(user);
     }
+
+    /**
+     * ユーザー情報編集
+     * 
+     * @param userUpdateRequest
+     */
+    public void update(UserUpdateRequest userUpdateRequest) {
+        var now = LocalDateTime.now();
+        User user = findById(userUpdateRequest.getId());
+        user.setName(userUpdateRequest.getName());
+        user.setAddress(userUpdateRequest.getAddress());
+        user.setPhone(userUpdateRequest.getPhone());
+        user.setUpdateDate(now);
+        userRepository.save(user);
+    }
+
 }

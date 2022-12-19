@@ -1,15 +1,21 @@
 package com.example.web.dto;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
- * ユーザー新規登録(POST /users) メッセージボディ
+ * ユーザー情報編集(PUT /users) メッセージボディ
  */
 @Data
-public class UserRequest {
+@EqualsAndHashCode(callSuper = false)
+public class UserUpdateRequest {
+
+    @NotNull
+    private Long id;
 
     /**
      * 名前

@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 
 import com.example.web.dto.UserRequest;
+import com.example.web.dto.UserUpdateRequest;
 import com.example.web.entity.User;
 import com.example.web.service.UserService;
 
@@ -31,53 +33,53 @@ public class UserController {
     private UserService userService;
 
     /**
-     * ユーザー一覧画面を返す
+     * GET /users
      *
      * @param model
      * @return ユーザー一覧画面
      */
-    @GetMapping("/user/list")
+    @GetMapping("/users")
     public String displayUsers(Model model) {
         List<User> userList = userService.searchAll();
         model.addAttribute("userList", userList);
-        return "user/list";
+        return "/users/list";
     }
 
     /**
-     * ユーザー詳細画面を返す
+     * GET /users/{id}
      *
      * @param id
      * @param model
      * @return ユーザー詳細画面
      */
-    @GetMapping("/user/{id}")
+    @GetMapping("/users/{id}")
     public String displayUserDetails(@PathVariable Long id, Model model) {
         User user = userService.findById(id);
         model.addAttribute("userData", user);
-        return "/user/details";
+        return "/users/details";
     }
 
     /**
-     * ユーザー新規登録画面を返す
+     * GET /users/add
      *
      * @param model
      * @return ユーザー新規登録画面
      */
-    @GetMapping(value = "/user/add")
+    @GetMapping(value = "/users/add")
     public String displayAdd(Model model) {
         model.addAttribute("userRequest", new UserRequest());
-        return "/user/add";
+        return "/users/add";
     }
 
     /**
-     * ユーザー新規登録
+     * POST /users
      *
      * @param userRequest
      * @param result
      * @param model
      * @return ユーザー一覧画面
      */
-    @PostMapping(value = "/user/create")
+    @PostMapping(value = "/users")
     public String createUser(
             @Validated @ModelAttribute UserRequest userRequest,
             BindingResult result,
@@ -90,13 +92,61 @@ public class UserController {
                 errorList.add(error.getDefaultMessage());
             }
             model.addAttribute("validationError", errorList);
-            return "/user/add";
+            return "/users/add";
         }
 
         // ユーザー新規登録
         userService.create(userRequest);
-        return "redirect:/user/list";
+        return "redirect:/users";
 
     }
 
+    /**
+     * GET /users/{id}/edit
+     *
+     * @param id
+     * @param model
+     * @return ユーザー情報編集画面
+     */
+    @GetMapping(value = "/users/{id}/edit")
+    public String displayEdit(@PathVariable Long id, Model model) {
+        User user = userService.findById(id);
+        var userUpdateRequest = new UserUpdateRequest();
+        userUpdateRequest.setId(user.getId());
+        userUpdateRequest.setName(user.getName());
+        userUpdateRequest.setAddress(user.getAddress());
+        userUpdateRequest.setPhone(user.getPhone());
+        model.addAttribute("userUpdateRequest", userUpdateRequest);
+        return "/users/edit";
+    }
+
+    /**
+     * PUT /users/{id}
+     *
+     * @param userUpdateRequest
+     * @param result
+     * @param model
+     * @return ユーザー詳細画面
+     */
+    @PutMapping(value = "users/{id}")
+    public String updateUser(
+            @Validated @ModelAttribute UserUpdateRequest userUpdateRequest,
+            BindingResult result,
+            Model model) {
+
+        // 入力チェックエラーの場合
+        if (result.hasErrors()) {
+            var errorList = new ArrayList<String>();
+            for (ObjectError error : result.getAllErrors()) {
+                errorList.add(error.getDefaultMessage());
+            }
+            model.addAttribute("validationError", errorList);
+            return "/users/edit";
+        }
+
+        // ユーザー新規登録
+        userService.update(userUpdateRequest);
+        return String.format("redirect:/users/%d", userUpdateRequest.getId());
+
+    }
 }

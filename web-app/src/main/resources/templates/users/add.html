@@ -19,7 +19,7 @@
 
           <form
             action=""
-            th:action="@{/user/create}"
+            th:action="@{/users}"
             th:object="${userRequest}"
             th:method="post"
           >
@@ -41,7 +41,7 @@
             <br />
 
             <div class="text-center">
-              <a href="/user/list" class="btn btn-secondary">キャンセル</a>
+              <a href="/users" class="btn btn-secondary">キャンセル</a>
               <input type="submit" value="　登録　" class="btn btn-primary" />
             </div>
           </form>
