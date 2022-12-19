@@ -20,10 +20,14 @@ public class UserController {
     @GetMapping("/user/list")
     public String displayList(Model model) {
 <<<<<<< HEAD
+<<<<<<< HEAD
         List<User> userlist = userService.searchAll();
 =======
         var userlist = userService.searchAll();
 >>>>>>> 6db1fbd (remove sout)
+=======
+        List<User> userlist = userService.searchAll();
+>>>>>>> f6ca9b3 (explicit type)
         model.addAttribute("userlist", userlist);
         return "user/list";
     }
