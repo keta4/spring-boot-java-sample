@@ -1,5 +1,6 @@
 # issues
 
+<<<<<<< HEAD
 ## ディレクトリ構成
 
 ```plaintext
@@ -72,6 +73,8 @@
                 list.html
 ```
 
+=======
+>>>>>>> 64fdca7ea92e4d12e8074283b13673684b2e0c3f
 ## 2022-12-09
 
 ### 詳細画面をつくってみる
@@ -91,6 +94,7 @@ GitHubにソースコードをpushする
 
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 ユーザー情報一覧
 
 - <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e4%b8%80%e8%a6%a7%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
@@ -104,9 +108,53 @@ GitHubにソースコードをpushする
 =======
 >>>>>>> 271803c (organize my thoughts)
 ユーザー情報一覧
+=======
+- ディレクトリ構成
+>>>>>>> 64fdca7ea92e4d12e8074283b13673684b2e0c3f
 
-- <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e4%b8%80%e8%a6%a7%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
+```plaintext
+training.web-app
+  |
+  |___src.main
+       |
+       |___java.com.example.web
+       |    |
+       |    |___controller
+       |    |    |
+       |    |    |__UserController.java
+       |    |
+       |    |___entity
+       |    |    |
+       |    |    |___User.java
+       |    |
+       |    |___repository
+       |    |    |
+       |    |    |___UserRepository.java
+       |    |
+       |    |___service
+       |         |
+       |         |___UserService.java
+       |
+       |___resources
+            |
+            |___templates
+            |    |
+            |    |___common
+            |    |    |
+            |    |    |___head.html
+            |    |
+            |    |___user
+            |         |
+            |         |___add.html
+            |         |
+            |         |___list.html
+            |         |
+            |         |___view.html
+            |
+            |___application.properties
+```
 
+<<<<<<< HEAD
 ユーザー情報詳細
 
 - <https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e8%a9%b3%e7%b4%b0%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
@@ -143,3 +191,11 @@ thymeleaf-extras-java8time
 >>>>>>> a5eb1ed (organize my thoughts)
 =======
 >>>>>>> 485a8b0 (organize my thoughts)
+=======
+<https://medium-company.com/spring-boot-thymeleaf%e3%81%a7%e8%a9%b3%e7%b4%b0%e7%94%bb%e9%9d%a2%e3%82%92%e4%bd%9c%e6%88%90%e3%81%99%e3%82%8b/>
+
+thymeleaf-extras-java8time
+<https://www.early2home.com/blog/programming/java/post-3162.html>
+<https://blog.beaglesoft.net/entry/2016/11/16/163000>
+<https://ryoichi0102.hatenablog.com/entry/2017/08/21/191055>
+>>>>>>> 64fdca7ea92e4d12e8074283b13673684b2e0c3f
