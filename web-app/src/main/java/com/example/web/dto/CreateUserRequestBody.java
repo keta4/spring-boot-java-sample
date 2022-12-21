@@ -9,7 +9,7 @@ import lombok.Data;
  * ユーザー新規登録(POST /users) メッセージボディ
  */
 @Data
-public class UserRequest {
+public class CreateUserRequestBody {
 
     /**
      * 名前

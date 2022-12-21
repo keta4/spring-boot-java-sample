@@ -12,7 +12,7 @@ import lombok.EqualsAndHashCode;
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
-public class UserUpdateRequest {
+public class UpdateUserRequestBody {
 
     @NotNull
     private Long id;

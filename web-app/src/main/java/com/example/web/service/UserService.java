@@ -7,8 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.example.web.dto.UserRequest;
-import com.example.web.dto.UserUpdateRequest;
+import com.example.web.dto.CreateUserRequestBody;
+import com.example.web.dto.UpdateUserRequestBody;
 import com.example.web.entity.User;
 import com.example.web.repository.UserRepository;
 
@@ -47,14 +47,14 @@ public class UserService {
     /**
      * ユーザー新規登録
      *
-     * @param userRequest
+     * @param createUserRequestBody
      */
-    public void create(UserRequest userRequest) {
+    public void create(CreateUserRequestBody createUserRequestBody) {
         var now = LocalDateTime.now();
         User user = new User();
-        user.setName(userRequest.getName());
-        user.setAddress(userRequest.getAddress());
-        user.setPhone(userRequest.getPhone());
+        user.setName(createUserRequestBody.getName());
+        user.setAddress(createUserRequestBody.getAddress());
+        user.setPhone(createUserRequestBody.getPhone());
         user.setCreateDate(now);
         user.setUpdateDate(now);
         userRepository.save(user);
@@ -63,21 +63,21 @@ public class UserService {
     /**
      * ユーザー情報編集
      *
-     * @param userUpdateRequest
+     * @param updateUserRequestBody
      */
-    public void update(UserUpdateRequest userUpdateRequest) {
+    public void update(UpdateUserRequestBody updateUserRequestBody) {
         var now = LocalDateTime.now();
-        User user = findById(userUpdateRequest.getId());
-        user.setName(userUpdateRequest.getName());
-        user.setAddress(userUpdateRequest.getAddress());
-        user.setPhone(userUpdateRequest.getPhone());
+        User user = findById(updateUserRequestBody.getId());
+        user.setName(updateUserRequestBody.getName());
+        user.setAddress(updateUserRequestBody.getAddress());
+        user.setPhone(updateUserRequestBody.getPhone());
         user.setUpdateDate(now);
         userRepository.save(user);
     }
 
     /**
      * ユーザー削除
-     * 
+     *
      * @param id
      */
     public void delete(Long id) {

@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
-import com.example.web.dto.UserRequest;
-import com.example.web.dto.UserUpdateRequest;
+import com.example.web.dto.CreateUserRequestBody;
+import com.example.web.dto.UpdateUserRequestBody;
 import com.example.web.entity.User;
 import com.example.web.service.UserService;
 
@@ -67,21 +67,21 @@ public class UserController {
      */
     @GetMapping(value = "/users/add")
     public String displayAdd(Model model) {
-        model.addAttribute("userRequest", new UserRequest());
+        model.addAttribute("createUserRequestBody", new CreateUserRequestBody());
         return "/users/add";
     }
 
     /**
      * POST /users
      *
-     * @param userRequest
+     * @param createUserRequestBody
      * @param result
      * @param model
      * @return ユーザー一覧画面
      */
     @PostMapping(value = "/users")
     public String createUser(
-            @Validated @ModelAttribute UserRequest userRequest,
+            @Validated @ModelAttribute CreateUserRequestBody createUserRequestBody,
             BindingResult result,
             Model model) {
 
@@ -96,7 +96,7 @@ public class UserController {
         }
 
         // ユーザー新規登録
-        userService.create(userRequest);
+        userService.create(createUserRequestBody);
         return "redirect:/users";
 
     }
@@ -111,26 +111,26 @@ public class UserController {
     @GetMapping(value = "/users/{id}/edit")
     public String displayEdit(@PathVariable Long id, Model model) {
         User user = userService.findById(id);
-        var userUpdateRequest = new UserUpdateRequest();
-        userUpdateRequest.setId(user.getId());
-        userUpdateRequest.setName(user.getName());
-        userUpdateRequest.setAddress(user.getAddress());
-        userUpdateRequest.setPhone(user.getPhone());
-        model.addAttribute("userUpdateRequest", userUpdateRequest);
+        var updateUserRequestBody = new UpdateUserRequestBody();
+        updateUserRequestBody.setId(user.getId());
+        updateUserRequestBody.setName(user.getName());
+        updateUserRequestBody.setAddress(user.getAddress());
+        updateUserRequestBody.setPhone(user.getPhone());
+        model.addAttribute("updateUserRequestBody", updateUserRequestBody);
         return "/users/edit";
     }
 
     /**
      * PUT /users/{id}
      *
-     * @param userUpdateRequest
+     * @param updateUserRequestBody
      * @param result
      * @param model
      * @return ユーザー詳細画面
      */
     @PutMapping(value = "users/{id}")
     public String updateUser(
-            @Validated @ModelAttribute UserUpdateRequest userUpdateRequest,
+            @Validated @ModelAttribute UpdateUserRequestBody updateUserRequestBody,
             BindingResult result,
             Model model) {
 
@@ -145,8 +145,8 @@ public class UserController {
         }
 
         // ユーザー新規登録
-        userService.update(userUpdateRequest);
-        return String.format("redirect:/users/%d", userUpdateRequest.getId());
+        userService.update(updateUserRequestBody);
+        return String.format("redirect:/users/%d", updateUserRequestBody.getId());
 
     }
 

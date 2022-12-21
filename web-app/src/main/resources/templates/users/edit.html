@@ -19,8 +19,8 @@
 
           <form
             action=""
-            th:action="@{/users/${userUpdateRequest.id}}"
-            th:object="${userUpdateRequest}"
+            th:action="@{/users/${updateUserRequestBody.id}}"
+            th:object="${updateUserRequestBody}"
             th:method="put"
           >
             <input type="hidden" th:field="*{id}" />
