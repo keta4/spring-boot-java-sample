@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 import com.example.web.dto.CreateUserRequestBody;
+import com.example.web.dto.SearchUserRequestBody;
 import com.example.web.dto.UpdateUserRequestBody;
 import com.example.web.entity.User;
 import com.example.web.service.UserService;
@@ -40,9 +41,30 @@ public class UserController {
      */
     @GetMapping("/users")
     public String displayUsers(Model model) {
+
         List<User> userList = userService.searchAll();
         model.addAttribute("userList", userList);
+        model.addAttribute("searchUserRequestBody", new SearchUserRequestBody());
         return "/users/list";
+
+    }
+
+    /**
+     * POST /users/search
+     *
+     * @param searchUserRequestBody
+     * @param model
+     * @return ユーザー一覧画面
+     */
+    @PostMapping(value = "/users/search")
+    public String displaySearchUsers(
+            @ModelAttribute SearchUserRequestBody searchUserRequestBody,
+            Model model) {
+
+        List<User> userList = userService.findByName(searchUserRequestBody);
+        model.addAttribute("userList", userList);
+        return "/users/list";
+
     }
 
     /**
@@ -54,9 +76,11 @@ public class UserController {
      */
     @GetMapping("/users/{id}")
     public String displayUserDetails(@PathVariable Long id, Model model) {
+
         User user = userService.findById(id);
         model.addAttribute("userData", user);
         return "/users/details";
+
     }
 
     /**
@@ -67,8 +91,10 @@ public class UserController {
      */
     @GetMapping(value = "/users/add")
     public String displayAdd(Model model) {
+
         model.addAttribute("createUserRequestBody", new CreateUserRequestBody());
         return "/users/add";
+
     }
 
     /**
@@ -110,6 +136,7 @@ public class UserController {
      */
     @GetMapping(value = "/users/{id}/edit")
     public String displayEdit(@PathVariable Long id, Model model) {
+
         User user = userService.findById(id);
         var updateUserRequestBody = new UpdateUserRequestBody();
         updateUserRequestBody.setId(user.getId());
@@ -118,6 +145,7 @@ public class UserController {
         updateUserRequestBody.setPhone(user.getPhone());
         model.addAttribute("updateUserRequestBody", updateUserRequestBody);
         return "/users/edit";
+
     }
 
     /**
@@ -159,7 +187,9 @@ public class UserController {
      */
     @GetMapping(path = "/users/{id}/delete")
     public String deleteUser(@PathVariable Long id, Model model) {
+
         userService.delete(id);
         return "redirect:/users";
+
     }
 }

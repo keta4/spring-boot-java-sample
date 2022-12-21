@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.example.web.dto.CreateUserRequestBody;
+import com.example.web.dto.SearchUserRequestBody;
 import com.example.web.dto.UpdateUserRequestBody;
 import com.example.web.entity.User;
 import com.example.web.repository.UserRepository;
@@ -28,7 +29,7 @@ public class UserService {
     /**
      * ユーザー情報 全件取得
      *
-     * @return 全ユーザー
+     * @return すべてのユーザーのリスト
      */
     public List<User> searchAll() {
         return userRepository.findAll();
@@ -45,11 +46,25 @@ public class UserService {
     }
 
     /**
+     * ユーザー情報 名前検索
+     *
+     * @param name
+     * @return マッチしたユーザーのリスト
+     */
+    public List<User> findByName(SearchUserRequestBody searchUserRequestBody) {
+
+        String name = searchUserRequestBody.getName();
+        return userRepository.findByNameIgnoreCaseContaining(name);
+
+    }
+
+    /**
      * ユーザー新規登録
      *
      * @param createUserRequestBody
      */
     public void create(CreateUserRequestBody createUserRequestBody) {
+
         var now = LocalDateTime.now();
         User user = new User();
         user.setName(createUserRequestBody.getName());
@@ -58,6 +73,7 @@ public class UserService {
         user.setCreateDate(now);
         user.setUpdateDate(now);
         userRepository.save(user);
+
     }
 
     /**
@@ -66,6 +82,7 @@ public class UserService {
      * @param updateUserRequestBody
      */
     public void update(UpdateUserRequestBody updateUserRequestBody) {
+
         var now = LocalDateTime.now();
         User user = findById(updateUserRequestBody.getId());
         user.setName(updateUserRequestBody.getName());
@@ -73,6 +90,7 @@ public class UserService {
         user.setPhone(updateUserRequestBody.getPhone());
         user.setUpdateDate(now);
         userRepository.save(user);
+
     }
 
     /**

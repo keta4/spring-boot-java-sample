@@ -18,6 +18,24 @@
               >新規登録はこちら</a
             >
           </div>
+
+          <form
+            th:action="@{/users/search}"
+            th:object="${searchUserRequestBody}"
+            th:method="post"
+          >
+            <div class="form-group">
+              <label for="name">名前</label>
+              <input type="text" class="w-50 form-control" th:field="*{name}" />
+            </div>
+            <br />
+            <button type="submit" class="btn btn-primary">検索</button>
+          </form>
+        </section>
+
+        <br />
+
+        <section>
           <table class="table table-striped">
             <thead>
               <tr>
