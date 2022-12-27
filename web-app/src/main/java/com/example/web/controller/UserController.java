@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 
 import com.example.web.dto.CreateUserRequestBody;
 import com.example.web.dto.SearchUserRequestBody;
@@ -156,7 +155,7 @@ public class UserController {
      * @param model
      * @return ユーザー詳細画面
      */
-    @PutMapping(value = "users/{id}")
+    @PostMapping(value = "users/{id}")
     public String updateUser(
             @Validated @ModelAttribute UpdateUserRequestBody updateUserRequestBody,
             BindingResult result,
