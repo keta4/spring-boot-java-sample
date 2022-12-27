@@ -20,17 +20,41 @@
           <form action="" th:object="${createUserRequestBody}">
             <div class="form-group">
               <label>名前：<span class="badge bg-danger">必須</span></label>
-              <input type="text" th:field="*{name}" class="form-control" />
+              <input
+                type="text"
+                th:field="*{name}"
+                th:errorclass="is-invalid"
+                class="form-control"
+                id="inputName"
+                placeholder="Alice"
+              />
+              <div class="invalid-feedback" th:errors="*{name}"></div>
             </div>
 
             <div class="form-group">
-              <label>住所：</label>
-              <input type="text" th:field="*{address}" class="form-control" />
+              <label>住所：<span class="badge bg-danger">必須</span></label>
+              <input
+                type="text"
+                th:field="*{address}"
+                th:errorclass="is-invalid"
+                class="form-control"
+                id="inputAddress"
+                placeholder="東京都千代田区千代田1-1"
+              />
+              <div class="invalid-feedback" th:errors="*{address}"></div>
             </div>
 
             <div class="form-group">
               <label>電話番号：<span class="badge bg-danger">必須</span></label>
-              <input type="text" th:field="*{phone}" class="form-control" />
+              <input
+                type="text"
+                th:field="*{phone}"
+                th:errorclass="is-invalid"
+                class="form-control"
+                id="inputPhone"
+                placeholder="090-1234-1234"
+              />
+              <div class="invalid-feedback" th:errors="*{phone}"></div>
             </div>
 
             <br />
