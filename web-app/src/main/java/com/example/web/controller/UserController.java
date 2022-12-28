@@ -141,7 +141,7 @@ public class UserController {
     }
 
     /**
-     * PUT /users/{id}
+     * POST /users/{id}
      *
      * @param updateUserRequestBody
      * @param result
