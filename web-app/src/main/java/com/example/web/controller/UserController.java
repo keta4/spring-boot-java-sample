@@ -63,24 +63,6 @@ public class UserController {
     }
 
     /**
-     * ユーザー検索
-     *
-     * @param searchUserRequestBody
-     * @param model
-     * @return ユーザー一覧画面
-     */
-    @PostMapping("/users/search")
-    public String displaySearchUsers(
-            @ModelAttribute SearchUserRequestBody searchUserRequestBody,
-            Model model) {
-
-        List<User> userList = userService.findByName(searchUserRequestBody);
-        model.addAttribute("userList", userList);
-        return "/users/list";
-
-    }
-
-    /**
      * ユーザー新規登録画面
      *
      * @param model
@@ -179,4 +161,23 @@ public class UserController {
         return "redirect:/users";
 
     }
+
+    /**
+     * ユーザー検索
+     *
+     * @param searchUserRequestBody
+     * @param model
+     * @return ユーザー一覧画面
+     */
+    @PostMapping("/users/search")
+    public String displaySearchUsers(
+            @ModelAttribute SearchUserRequestBody searchUserRequestBody,
+            Model model) {
+
+        List<User> userList = userService.findByName(searchUserRequestBody);
+        model.addAttribute("userList", userList);
+        return "/users/list";
+
+    }
+
 }

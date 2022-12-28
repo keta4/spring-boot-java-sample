@@ -46,19 +46,6 @@ public class UserService {
     }
 
     /**
-     * ユーザー情報 名前検索
-     *
-     * @param name
-     * @return マッチしたユーザーのリスト
-     */
-    public List<User> findByName(SearchUserRequestBody searchUserRequestBody) {
-
-        String name = searchUserRequestBody.getName();
-        return userRepository.findByNameIgnoreCaseContaining(name);
-
-    }
-
-    /**
      * ユーザー新規登録
      *
      * @param createUserRequestBody
@@ -101,4 +88,18 @@ public class UserService {
     public void delete(Long id) {
         userRepository.deleteById(id);
     }
+
+    /**
+     * ユーザー情報 名前検索
+     *
+     * @param name
+     * @return マッチしたユーザーのリスト
+     */
+    public List<User> findByName(SearchUserRequestBody searchUserRequestBody) {
+
+        String name = searchUserRequestBody.getName();
+        return userRepository.findByNameIgnoreCaseContaining(name);
+
+    }
+
 }
