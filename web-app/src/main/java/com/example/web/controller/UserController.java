@@ -31,7 +31,7 @@ public class UserController {
     private UserService userService;
 
     /**
-     * GET /users
+     * ユーザー一覧
      *
      * @param model
      * @return ユーザー一覧画面
@@ -47,7 +47,7 @@ public class UserController {
     }
 
     /**
-     * GET /users/{id}
+     * ユーザー詳細
      *
      * @param id
      * @param model
@@ -63,7 +63,7 @@ public class UserController {
     }
 
     /**
-     * POST /users/search
+     * ユーザー検索
      *
      * @param searchUserRequestBody
      * @param model
@@ -81,7 +81,7 @@ public class UserController {
     }
 
     /**
-     * GET /users/add
+     * ユーザー新規登録画面
      *
      * @param model
      * @return ユーザー新規登録画面
@@ -95,7 +95,7 @@ public class UserController {
     }
 
     /**
-     * POST /users
+     * ユーザー新規登録
      *
      * @param createUserRequestBody
      * @param result
@@ -120,7 +120,7 @@ public class UserController {
     }
 
     /**
-     * GET /users/{id}/edit
+     * ユーザー編集画面
      *
      * @param id
      * @param model
@@ -141,7 +141,7 @@ public class UserController {
     }
 
     /**
-     * POST /users/{id}
+     * ユーザー編集
      *
      * @param updateUserRequestBody
      * @param result

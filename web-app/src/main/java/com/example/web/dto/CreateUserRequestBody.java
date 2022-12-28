@@ -6,7 +6,7 @@ import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 /**
- * ユーザー新規登録(POST /users) メッセージボディ
+ * ユーザー新規登録 メッセージボディ
  */
 @Data
 public class CreateUserRequestBody {

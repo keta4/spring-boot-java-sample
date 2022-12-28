@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * ユーザー情報編集(PUT /users) メッセージボディ
+ * ユーザー編集 メッセージボディ
  */
 @Data
 @EqualsAndHashCode(callSuper = false)
