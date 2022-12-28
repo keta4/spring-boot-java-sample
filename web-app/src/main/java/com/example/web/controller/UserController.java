@@ -69,7 +69,7 @@ public class UserController {
      * @param model
      * @return ユーザー一覧画面
      */
-    @PostMapping(value = "/users/search")
+    @PostMapping("/users/search")
     public String displaySearchUsers(
             @ModelAttribute SearchUserRequestBody searchUserRequestBody,
             Model model) {
@@ -86,7 +86,7 @@ public class UserController {
      * @param model
      * @return ユーザー新規登録画面
      */
-    @GetMapping(value = "/users/add")
+    @GetMapping("/users/add")
     public String displayAdd(Model model) {
 
         model.addAttribute("createUserRequestBody", new CreateUserRequestBody());
@@ -102,7 +102,7 @@ public class UserController {
      * @param model
      * @return ユーザー一覧画面
      */
-    @PostMapping(value = "/users")
+    @PostMapping("/users")
     public String createUser(
             @Validated CreateUserRequestBody createUserRequestBody,
             BindingResult result,
@@ -126,7 +126,7 @@ public class UserController {
      * @param model
      * @return ユーザー情報編集画面
      */
-    @GetMapping(value = "/users/{id}/edit")
+    @GetMapping("/users/{id}/edit")
     public String displayEdit(@PathVariable Long id, Model model) {
 
         User user = userService.findById(id);
@@ -148,7 +148,7 @@ public class UserController {
      * @param model
      * @return ユーザー詳細画面
      */
-    @PostMapping(value = "users/{id}")
+    @PostMapping("users/{id}")
     public String updateUser(
             @Validated UpdateUserRequestBody updateUserRequestBody,
             BindingResult result,
@@ -172,7 +172,7 @@ public class UserController {
      * @param model
      * @return ユーザー一覧画面
      */
-    @GetMapping(path = "/users/{id}/delete")
+    @GetMapping("/users/{id}/delete")
     public String deleteUser(@PathVariable Long id, Model model) {
 
         userService.delete(id);
