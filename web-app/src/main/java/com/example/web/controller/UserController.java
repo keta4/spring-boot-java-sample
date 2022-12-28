@@ -47,6 +47,22 @@ public class UserController {
     }
 
     /**
+     * GET /users/{id}
+     *
+     * @param id
+     * @param model
+     * @return ユーザー詳細画面
+     */
+    @GetMapping("/users/{id}")
+    public String displayUserDetails(@PathVariable Long id, Model model) {
+
+        User user = userService.findById(id);
+        model.addAttribute("userData", user);
+        return "/users/details";
+
+    }
+
+    /**
      * POST /users/search
      *
      * @param searchUserRequestBody
@@ -61,22 +77,6 @@ public class UserController {
         List<User> userList = userService.findByName(searchUserRequestBody);
         model.addAttribute("userList", userList);
         return "/users/list";
-
-    }
-
-    /**
-     * GET /users/{id}
-     *
-     * @param id
-     * @param model
-     * @return ユーザー詳細画面
-     */
-    @GetMapping("/users/{id}")
-    public String displayUserDetails(@PathVariable Long id, Model model) {
-
-        User user = userService.findById(id);
-        model.addAttribute("userData", user);
-        return "/users/details";
 
     }
 
