@@ -22,7 +22,12 @@
           <form action="" th:object="${searchUserRequestBody}">
             <div class="form-group">
               <label for="name">名前</label>
-              <input type="text" class="w-50 form-control" th:field="*{name}" />
+              <input
+                type="text"
+                class="w-50 form-control"
+                id="name"
+                th:field="*{name}"
+              />
             </div>
             <br />
             <button
