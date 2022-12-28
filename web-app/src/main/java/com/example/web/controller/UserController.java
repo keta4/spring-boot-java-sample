@@ -159,7 +159,7 @@ public class UserController {
             return "/users/edit";
         }
 
-        // ユーザー新規登録
+        // ユーザー編集
         userService.update(updateUserRequestBody);
         return String.format("redirect:/users/%d", updateUserRequestBody.getId());
 
